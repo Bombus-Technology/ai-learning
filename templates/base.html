@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{title} — AI Learning</title>
+<link rel="stylesheet" href="{root}css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css">
+</head>
+<body data-root="{root}">
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="{root}index.html" class="nav-brand">AI <em>Learning</em></a>
+    <div class="nav-links">
+      <a href="{root}tags/index.html">Tags</a>
+      <a href="{root}categories/index.html">分類</a>
+      <a href="{root}series/index.html">系列</a>
+      <a href="{root}authors/index.html">作者</a>
+    </div>
+    <div class="search-box">
+      <input type="text" id="search-input" placeholder="搜尋文章...">
+      <div id="search-results" class="search-results"></div>
+    </div>
+  </div>
+</nav>
+<main>
+  {content}
+</main>
+<footer class="footer">
+  <p>Bombus AI Learning — 閱讀、討論、內化</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7/dist/fuse.min.js"></script>
+<script src="{root}js/search.js"></script>
+{extra_scripts}
+</body>
+</html>

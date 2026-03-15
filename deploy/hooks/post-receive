@@ -1,0 +1,26 @@
+#!/bin/bash
+# Git post-receive hook — auto-build AI Learning site on push
+#
+# Install:
+#   cp deploy/hooks/post-receive /path/to/ai-learning.git/hooks/post-receive
+#   chmod +x /path/to/ai-learning.git/hooks/post-receive
+
+WORK_DIR="/root/workspace/allen/ai-learning"
+LOG_FILE="/var/log/ai-learning-build.log"
+
+echo "$(date '+%Y-%m-%d %H:%M:%S') - Received push, rebuilding..." | tee -a "$LOG_FILE"
+
+cd "$WORK_DIR" || exit 1
+
+# Pull latest changes
+git --work-tree="$WORK_DIR" --git-dir="$WORK_DIR/.git" checkout -f main 2>&1 | tee -a "$LOG_FILE"
+
+# Rebuild site
+python3 build.py 2>&1 | tee -a "$LOG_FILE"
+
+if [ $? -eq 0 ]; then
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - Build successful" | tee -a "$LOG_FILE"
+else
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - Build FAILED" | tee -a "$LOG_FILE"
+    exit 1
+fi

@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="breadcrumb">
+    <a href="{root}index.html">首頁</a>
+    <span class="sep">/</span>
+    <a href="{root}authors/index.html">作者</a>
+    <span class="sep">/</span>
+    <span>{author_name}</span>
+  </div>
+
+  <div class="author-profile">
+    <div class="author-avatar">{avatar_letter}</div>
+    <div class="author-info">
+      <h1>{author_name}</h1>
+      <div class="author-stats">{total_articles} 篇文章</div>
+    </div>
+  </div>
+
+  <div class="contribution-chart">
+    {contribution_html}
+  </div>
+
+  <div class="section-header">
+    <h2 class="section-title">文章列表</h2>
+  </div>
+  <div class="article-grid">
+    {articles_html}
+  </div>
+</div>

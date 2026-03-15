@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-value">{stat_total}</div>
+      <div class="stat-label">總篇數</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">{stat_monthly}</div>
+      <div class="stat-label">本月新增</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">{stat_authors}</div>
+      <div class="stat-label">活躍作者</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">{stat_tags}</div>
+      <div class="stat-label">Tags</div>
+    </div>
+  </div>
+
+  {filter_bar}
+
+  <div class="section-header">
+    <h2 class="section-title">所有文章</h2>
+  </div>
+  <div class="article-grid" id="article-list">
+    {articles_html}
+  </div>
+
+  {empty_state}
+</div>

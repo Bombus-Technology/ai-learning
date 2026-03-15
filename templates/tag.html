@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="breadcrumb">
+    <a href="{root}index.html">首頁</a>
+    <span class="sep">/</span>
+    <a href="{root}tags/index.html">Tags</a>
+    <span class="sep">/</span>
+    <span>{tag_name}</span>
+  </div>
+
+  <div class="page-header">
+    <h1 class="page-title">{tag_name}</h1>
+    <p class="page-subtitle">{count} 篇文章</p>
+  </div>
+
+  <div class="article-grid">
+    {articles_html}
+  </div>
+</div>

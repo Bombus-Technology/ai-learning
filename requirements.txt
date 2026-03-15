@@ -1,0 +1,4 @@
+mistune>=3.0,<4.0
+pyyaml>=6.0
+watchdog>=4.0
+livereload>=2.6
